@@ -1,19 +1,115 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- الواجهة الأولى: استمارة تسجيل المسافر عبر الزمن -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sv_main_ib"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:fitsSystemWindows="true">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- حاوية عمودية تحتوي على كل عناصر الاستمارة -->
+    <LinearLayout
+        android:id="@+id/ll_form_ib"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical"
+        android:padding="24dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- عنوان الشاشة -->
+        <TextView
+            android:id="@+id/tv_titre_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="DOUANE TEMPORELLE"
+            android:textSize="26sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <!-- حقل اسم المسافر -->
+        <TextView
+            android:id="@+id/tv_label_nom_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nom du voyageur" />
+
+        <EditText
+            android:id="@+id/et_nom_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex : Marty McFly"
+            android:inputType="textPersonName" />
+
+        <!-- حقل سنة الميلاد: أرقام فقط، 4 خانات كحد أقصى -->
+        <TextView
+            android:id="@+id/tv_label_naissance_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Année de naissance" />
+
+        <EditText
+            android:id="@+id/et_naissance_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex : 1990"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <!-- حقل سنة الوجهة: أرقام فقط، 4 خانات كحد أقصى -->
+        <TextView
+            android:id="@+id/tv_label_destination_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Année de destination" />
+
+        <EditText
+            android:id="@+id/et_destination_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Ex : 2050"
+            android:inputType="number"
+            android:maxLength="4" />
+
+        <!-- سبب السفر: مجموعة أزرار اختيار، يمكن اختيار واحد فقط -->
+        <TextView
+            android:id="@+id/tv_label_motif_ib"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Motif du voyage" />
+
+        <RadioGroup
+            android:id="@+id/rg_motif_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_tourisme_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tourisme" />
+
+            <RadioButton
+                android:id="@+id/rb_modification_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Modification du passé" />
+
+            <RadioButton
+                android:id="@+id/rb_fuite_ib"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fuite" />
+        </RadioGroup>
+
+        <!-- زر فحص الملف الشخصي -->
+        <Button
+            android:id="@+id/btn_inspecter_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Inspecter le profil" />
+
+    </LinearLayout>
+</ScrollView>
