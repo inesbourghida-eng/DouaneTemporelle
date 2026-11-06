@@ -1,10 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- الحاوية الرئيسية: LinearLayout أفقي يقسم الشاشة إلى جزأين -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
+    android:orientation="horizontal"
+    android:weightSum="1"
+    android:background="#F5E6C8">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- الجزء الأيسر: الصورة بوزن 0.3 من العرض -->
+    <ImageView
+        android:id="@+id/imgBillet_ib"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.3"
+        android:padding="8dp"
+        android:scaleType="centerInside"
+        android:src="@android:drawable/ic_menu_my_calendar"
+        android:contentDescription="Billet temporel" />
+
+    <!-- الجزء الأيمن: RelativeLayout بوزن 0.7 يحتوي على النصوص والأزرار -->
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="0.7"
+        android:padding="16dp">
+
+        <!-- عنوان الجواز بأسلوب التذكرة -->
+        <TextView
+            android:id="@+id/tvTitre_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="PASSEPORT TEMPOREL"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:textColor="#5D4037"
+            android:gravity="center"
+            android:paddingBottom="8dp" />
+
+        <!-- اسم المسافر -->
+        <TextView
+            android:id="@+id/tvNom_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvTitre_ib"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textColor="#3E2723"
+            android:text="Nom : " />
+
+        <!-- سنة الولادة -->
+        <TextView
+            android:id="@+id/tvNaissance_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNom_ib"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textColor="#3E2723"
+            android:text="Naissance : " />
+
+        <!-- سنة الوجهة -->
+        <TextView
+            android:id="@+id/tvDestination_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNaissance_ib"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textColor="#3E2723"
+            android:text="Destination : " />
+
+        <!-- العمر الزمني = الوجهة - الولادة -->
+        <TextView
+            android:id="@+id/tvAge_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvDestination_ib"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#B71C1C"
+            android:text="Age temporel : " />
+
+        <!-- سبب الرحلة -->
+        <TextView
+            android:id="@+id/tvMotif_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvAge_ib"
+            android:fontFamily="monospace"
+            android:textSize="16sp"
+            android:textColor="#3E2723"
+            android:paddingBottom="12dp"
+            android:text="Motif : " />
+
+        <!-- زر الموافقة -->
+        <Button
+            android:id="@+id/btnApprouver_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvMotif_ib"
+            android:text="Approuver le saut temporel" />
+
+        <!-- زر الرفض -->
+        <Button
+            android:id="@+id/btnRefuser_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnApprouver_ib"
+            android:text="Refuser (Risque de paradoxe)" />
+
+        <!-- رسالة التنبيه: تظهر فقط عندما يكون زر الموافقة معطلاً -->
+        <TextView
+            android:id="@+id/tvAlerte_ib"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/btnRefuser_ib"
+            android:textColor="#B71C1C"
+            android:textStyle="italic"
+            android:visibility="gone"
+            android:text="Paradoxe détecté : approbation impossible." />
+
+    </RelativeLayout>
+</LinearLayout>
