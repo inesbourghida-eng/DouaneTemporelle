@@ -8,96 +8,84 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+// hethi el wajiha ethnya: el passeport ezzmeni (scanner mta3 el paradoxe)
 public class VerificationActivity extends AppCompatActivity {
 
-    // تصريح العناصر الرسومية
-    private TextView tvNom_ib, tvNaissance_ib, tvDestination_ib,
-            tvAge_ib, tvMotif_ib, tvAlerte_ib;
-    private Button btnApprouver_ib, btnRefuser_ib;
+    // n3arrfou 3anaser el wajiha
+    private TextView tvNom, tvNaissance, tvDestination, tvAge, tvMotif, tvAlerte;
+    private Button btnApprouver, btnRefuser;
 
-    // البيانات المستلمة من الشاشة الأولى
+    // nesta7a9ou esm el msafer baad bech nab3thouh lel wajiha ethalitha
     private String nom;
-    private String motif;
-    private int naissance;
-    private int destination;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // nrabtou el classe m3a el design activity_verification.xml
         setContentView(R.layout.activity_verification);
 
-        // ربط العناصر بملف XML عبر المعرفات
-        tvNom_ib = findViewById(R.id.tvNom_ib);
-        tvNaissance_ib = findViewById(R.id.tvNaissance_ib);
-        tvDestination_ib = findViewById(R.id.tvDestination_ib);
-        tvAge_ib = findViewById(R.id.tvAge_ib);
-        tvMotif_ib = findViewById(R.id.tvMotif_ib);
-        tvAlerte_ib = findViewById(R.id.tvAlerte_ib);
-        btnApprouver_ib = findViewById(R.id.btnApprouver_ib);
-        btnRefuser_ib = findViewById(R.id.btnRefuser_ib);
+        // nrabtou kol variable bel element mta3ha fel XML
+        tvNom = findViewById(R.id.tv_nom_ib);
+        tvNaissance = findViewById(R.id.tv_naissance_ib);
+        tvDestination = findViewById(R.id.tv_destination_ib);
+        tvAge = findViewById(R.id.tv_age_ib);
+        tvMotif = findViewById(R.id.tv_motif_ib);
+        tvAlerte = findViewById(R.id.tv_alerte_ib);
+        btnApprouver = findViewById(R.id.btn_approuver_ib);
+        btnRefuser = findViewById(R.id.btn_refuser_ib);
 
-        // قراءة البيانات من الـ Intent: المفاتيح تحتاج رقم التسجيل كمعامل
+        // na9raw el donnees elli jeyin men el wajiha el loula b nafs el cles
         Intent intent = getIntent();
         nom = intent.getStringExtra(Cles.cleNom(Cles.MATRICULE));
-        motif = intent.getStringExtra(Cles.cleMotif(Cles.MATRICULE));
-        naissance = intent.getIntExtra(Cles.cleNaissance(Cles.MATRICULE), 0);
-        destination = intent.getIntExtra(Cles.cleDestination(Cles.MATRICULE), 0);
+        int naissance = intent.getIntExtra(Cles.cleNaissance(Cles.MATRICULE), 0);
+        int destination = intent.getIntExtra(Cles.cleDestination(Cles.MATRICULE), 0);
+        String motif = intent.getStringExtra(Cles.cleMotif(Cles.MATRICULE));
 
-        // حساب العمر الزمني = سنة الوجهة - سنة الولادة
-        int ageTemporel = destination - naissance;
+        // el 3omr ezzmeni = 3am el wejha - 3am el wiladha
+        int age = destination - naissance;
 
-        // عرض المعلومات على شكل جواز سفر
-        tvNom_ib.setText("Nom : " + nom);
-        tvNaissance_ib.setText("Naissance : " + naissance);
-        tvDestination_ib.setText("Destination : " + destination);
-        tvAge_ib.setText("Age temporel : " + ageTemporel + " ans");
-        tvMotif_ib.setText("Motif : " + motif);
+        // n7ottou el ktiba fel passeport
+        tvNom.setText("Nom : " + nom);
+        tvNaissance.setText("Naissance : " + naissance);
+        tvDestination.setText("Destination : " + destination);
+        tvAge.setText("Age temporel : " + age + " ans");
+        tvMotif.setText("Motif : " + motif);
 
-        // القاعدة: إذا كان السبب "تعديل الماضي" والعمر الزمني عدد أولي
-        // يتم تعطيل زر الموافقة مباشرة عند إنشاء الشاشة
-        if ("Modification du passé".equals(motif) && estPremier(ageTemporel)) {
-            btnApprouver_ib.setEnabled(false);
-            tvAlerte_ib.setVisibility(View.VISIBLE);
+        // ken el motif "Modification du passe" w el far9 3adad awwali (premier):
+        // nbatlou zerr el mwafa9a men awwel ma tet7al el wajiha
+        if (motif != null && motif.startsWith("Modification") && estPremier(age)) {
+            btnApprouver.setEnabled(false);
+            tvAlerte.setVisibility(View.VISIBLE);
         }
 
-        // زر الموافقة: يرسل القرار true
-        btnApprouver_ib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ouvrirResultat(true);
-            }
-        });
-
-        // زر الرفض: يرسل القرار false
-        btnRefuser_ib.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ouvrirResultat(false);
-            }
-        });
+        // zerr el mwafa9a yab3eth verdict = true, zerr el rafdh yab3eth false
+        btnApprouver.setOnClickListener(v -> ouvrirVerdict(true));
+        btnRefuser.setOnClickListener(v -> ouvrirVerdict(false));
     }
 
-    // دالة تفتح شاشة النتيجة وترسل القرار (boolean) والاسم
-    private void ouvrirResultat(boolean verdict) {
-        Intent intent = new Intent(VerificationActivity.this, ResultActivity.class);
-        // إرسال القرار والاسم إلى شاشة النتيجة بنفس المفاتيح
-        intent.putExtra(Cles.cleVerdict(Cles.MATRICULE), verdict);
-        intent.putExtra(Cles.cleNom(Cles.MATRICULE), nom);
-        startActivity(intent);
-    }
-
-    // دالة تتحقق هل العدد أولي (يقبل القسمة على 1 ونفسه فقط)
+    // methode: tfaker ken el 3adad awwali (premier) wala le
     private boolean estPremier(int n) {
-        // الأعداد الأصغر من 2 ليست أولية
+        // el 3adad el sghir men 2 mouch awwali
         if (n < 2) {
             return false;
         }
-        // نجرب القواسم من 2 إلى الجذر التربيعي للعدد
+        // nbahthou 3la 9assem men 2 7atta jedhr el 3adad (i * i <= n)
         for (int i = 2; i * i <= n; i++) {
+            // ken yet9asem, yab9a mouch awwali
             if (n % i == 0) {
-                return false; // وجدنا قاسماً، إذن ليس أولياً
+                return false;
             }
         }
-        return true; // لم نجد أي قاسم، إذن هو أولي
+        // ma l9ina 7ata 9assem: el 3adad awwali
+        return true;
+    }
+
+    // methode: tel7el el wajiha ethalitha w tab3eth el verdict w el esm
+    private void ouvrirVerdict(boolean approuve) {
+        Intent intent = new Intent(this, ResultActivity.class);
+        // nab3thou el verdict (boolean) w esm el msafer b el cles mta3 Cles
+        intent.putExtra(Cles.cleVerdict(Cles.MATRICULE), approuve);
+        intent.putExtra(Cles.cleNom(Cles.MATRICULE), nom);
+        startActivity(intent);
     }
 }
