@@ -17,7 +17,7 @@
         android:layout_weight="0.3"
         android:padding="12dp"
         android:scaleType="fitCenter"
-        android:contentDescription="Icone du passeport temporel"
+        android:contentDescription="Icône du passeport temporel"
         android:src="@drawable/ic_passeport" />
 
     <!-- el ktiba 3al limin: el 3ard 0dp m3a wazn 0.7 -->
@@ -99,13 +99,15 @@
             android:fontFamily="monospace" />
 
         <!-- tanbih el paradoxe: mkhabbi ml loul w yodhher ken lazem -->
+        <!-- layout_above: dima fou9 zerr el mwafa9a bech ma yet5abbach ta7t el zrar -->
         <TextView
             android:id="@+id/tv_alerte_ib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_motif_ib"
+            android:layout_above="@+id/btn_approuver_ib"
             android:layout_marginTop="12dp"
-            android:text="PARADOXE DETECTE : saut non autorise"
+            android:text="PARADOXE DÉTECTÉ : saut non autorisé"
             android:textColor="@color/rouge_refuse"
             android:textSize="13sp"
             android:textStyle="bold"
