@@ -40,8 +40,8 @@ public class ResultActivity extends AppCompatActivity {
         // zerr "Nouveau voyageur": nraj3ou lel wajiha el loula w nesakrou el wajihat el 9dom
         btnNouveau.setOnClickListener(v -> {
             Intent intent = new Intent(this, MainActivity.class);
-            // CLEAR_TOP yfas5 el wajihat elli fou9 MainActivity, NEW_TASK ybda pile jdida
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+            // CLEAR_TOP yfas5 el wajihat elli fou9 MainActivity (Verification w Result)
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             // nesakrou el wajiha el 7alia
             finish();
