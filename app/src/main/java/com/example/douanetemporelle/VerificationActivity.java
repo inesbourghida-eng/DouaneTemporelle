@@ -48,7 +48,7 @@ public class VerificationActivity extends AppCompatActivity {
         tvNom.setText("Nom : " + nom);
         tvNaissance.setText("Naissance : " + naissance);
         tvDestination.setText("Destination : " + destination);
-        tvAge.setText("Age temporel : " + age + " ans");
+        tvAge.setText("Âge temporel : " + age + " ans");
         tvMotif.setText("Motif : " + motif);
 
         // ken el motif "Modification du passe" w el far9 3adad awwali (premier):
