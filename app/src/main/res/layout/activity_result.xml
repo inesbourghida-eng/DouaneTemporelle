@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<!-- el wajiha ethalitha: el 9arar el nehayi -->
+<!-- el 5alfiya tet8ayyer fel Java 7asb el verdict (a5dhar wala a7mar) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_resultat_ib"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:fitsSystemWindows="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <!-- el message el 5as bel msafer -->
+    <TextView
+        android:id="@+id/tv_message_ib"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <!-- zerr msafer jdid: yraja3 lel wajiha el loula -->
+    <Button
+        android:id="@+id/btn_nouveau_ib"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Nouveau voyageur" />
+
+</LinearLayout>

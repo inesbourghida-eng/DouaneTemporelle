@@ -1,33 +1,33 @@
 package com.example.douanetemporelle;
 
-// فئة مساعدة: تبني مفاتيح putExtra انطلاقا من رقم التسجيل
-// المفاتيح غير مكتوبة مباشرة في الكود، بل تُبنى بواسطة دوال ثابتة (static)
+// hethi classe mta3 mosa3ada: tebni les cles mta3 putExtra bel matricule
+// el cles mouch maktouba b yedd fel code, tetbna b methodes static
 public class Cles {
 
-    // رقم التسجيل: آخر 4 أرقام من بطاقة الطالب (يُعرَّف مرة واحدة فقط)
+    // el matricule: a5er 4 arkem men carte etudiant, n7ottouh mara wa7da bark
     public static final String MATRICULE = "8961";
 
-    // مفتاح اسم المسافر، مثال: "8961_NOM_VOYAGEUR"
+    // cle mta3 esm el msafer, mithel: 8961_NOM_VOYAGEUR
     public static String cleNom(String matricule) {
         return matricule + "_NOM_VOYAGEUR";
     }
 
-    // مفتاح سنة الميلاد
+    // cle mta3 3am el wiladha
     public static String cleNaissance(String matricule) {
         return matricule + "_ANNEE_NAISSANCE";
     }
 
-    // مفتاح سنة الوجهة
+    // cle mta3 3am el wejha (win bech yosfor)
     public static String cleDestination(String matricule) {
         return matricule + "_ANNEE_DESTINATION";
     }
 
-    // مفتاح سبب السفر
+    // cle mta3 sabab el safar
     public static String cleMotif(String matricule) {
         return matricule + "_MOTIF_VOYAGE";
     }
 
-    // مفتاح القرار النهائي (true = موافقة، false = رفض)
+    // cle mta3 el 9arar el nehayi (true = mwafa9a, false = rafdh)
     public static String cleVerdict(String matricule) {
         return matricule + "_VERDICT";
     }
