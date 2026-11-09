@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DouaneTemporelle</string>
+
+    <string name="MD_titre">Bienvenue</string>
+    <string name="MD_sous_titre">Remplissez le formulaire ci-dessous</string>
+    <string name="MD_hint_nom">Nom complet</string>
+    <string name="MD_hint_email">Adresse e-mail</string>
+    <string name="MD_btn_valider">Valider</string>
+    <string name="MD_btn_annuler">Annuler</string>
+    <string name="MD_signature">Réalisé par MD</string>
 </resources>
