@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- الواجهة الأولى: استمارة تسجيل المسافر عبر الزمن -->
+<!-- el wajiha el loula: formulaire mta3 tasjil el msafer 3abr ezzmen -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/sv_main_ib"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
-    <!-- حاوية عمودية تحتوي على كل عناصر الاستمارة -->
+    <!-- 7awi 3amoudi (men fou9 l ta7t) fih kol 3anaser el formulaire -->
     <LinearLayout
         android:id="@+id/ll_form_ib"
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:orientation="vertical"
         android:padding="24dp">
 
-        <!-- عنوان الشاشة -->
+        <!-- 3onwen el wajiha -->
         <TextView
             android:id="@+id/tv_titre_ib"
             android:layout_width="match_parent"
@@ -25,7 +25,7 @@
             android:gravity="center"
             android:layout_marginBottom="24dp" />
 
-        <!-- حقل اسم المسافر -->
+        <!-- 7a9l esm el msafer -->
         <TextView
             android:id="@+id/tv_label_nom_ib"
             android:layout_width="wrap_content"
@@ -39,7 +39,7 @@
             android:hint="Ex : Marty McFly"
             android:inputType="textPersonName" />
 
-        <!-- حقل سنة الميلاد: أرقام فقط، 4 خانات كحد أقصى -->
+        <!-- 7a9l 3am el wiladha: ar9am bark w 4 5anat ken -->
         <TextView
             android:id="@+id/tv_label_naissance_ib"
             android:layout_width="wrap_content"
@@ -55,7 +55,7 @@
             android:inputType="number"
             android:maxLength="4" />
 
-        <!-- حقل سنة الوجهة: أرقام فقط، 4 خانات كحد أقصى -->
+        <!-- 7a9l 3am el wejha: ar9am bark w 4 5anat ken -->
         <TextView
             android:id="@+id/tv_label_destination_ib"
             android:layout_width="wrap_content"
@@ -71,7 +71,7 @@
             android:inputType="number"
             android:maxLength="4" />
 
-        <!-- سبب السفر: مجموعة أزرار اختيار، يمكن اختيار واحد فقط -->
+        <!-- sabab el safar: tnejem tekhtar wa7da bark -->
         <TextView
             android:id="@+id/tv_label_motif_ib"
             android:layout_width="wrap_content"
@@ -103,7 +103,7 @@
                 android:text="Fuite" />
         </RadioGroup>
 
-        <!-- زر فحص الملف الشخصي -->
+        <!-- zerr el fa7s mta3 el profil -->
         <Button
             android:id="@+id/btn_inspecter_ib"
             android:layout_width="match_parent"
