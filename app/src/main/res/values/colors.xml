@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- hethi el alwen elli nest3mlou fel app -->
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <!-- loun el 5alfiya mta3 el passeport: krem -->
+    <color name="creme_passeport">#FFF5E6C8</color>
+    <!-- loun dakhel el cadre -->
+    <color name="creme_clair">#FFFFF8E7</color>
+    <!-- loun el ktiba w el hodoud: bonni gham9a -->
+    <color name="brun_passeport">#FF4E342E</color>
+    <!-- loun el mwafa9a: a5dhar -->
+    <color name="vert_approuve">#FF2E7D32</color>
+    <!-- loun el rafdh: a7mar -->
+    <color name="rouge_refuse">#FFC62828</color>
 </resources>
