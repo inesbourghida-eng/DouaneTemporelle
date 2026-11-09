@@ -1,8 +1,20 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.DouaneTemporelle" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+    <style name="Base.Theme.DouaneTemporelle" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Couleurs principales MD -->
+        <item name="colorPrimary">@color/MD_primary</item>
+        <item name="colorPrimaryDark">@color/MD_primary_dark</item>
+        <item name="colorOnPrimary">@color/MD_white</item>
+        <item name="colorSecondary">@color/MD_accent</item>
+        <item name="colorOnSecondary">@color/MD_white</item>
+
+        <!-- Fond et texte -->
+        <item name="android:windowBackground">@color/MD_background</item>
+        <item name="android:textColorPrimary">@color/MD_text_dark</item>
+        <item name="android:textColorSecondary">@color/MD_text_light</item>
+
+        <!-- Barre d'état assortie à l'en-tête -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/MD_primary_dark</item>
     </style>
 
     <style name="Theme.DouaneTemporelle" parent="Base.Theme.DouaneTemporelle" />
