@@ -1,115 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- el wajiha el loula: formulaire mta3 tasjil el msafer 3abr ezzmen -->
+<!-- el wajiha el loula: formulaire mta3 tasjil el msafer 3abr ezzmen (style MD) -->
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/sv_main_ib"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sv_main_md"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/MD_background"
+    android:fillViewport="true"
     android:fitsSystemWindows="true">
 
-    <!-- 7awi 3amoudi (men fou9 l ta7t) fih kol 3anaser el formulaire -->
     <LinearLayout
-        android:id="@+id/ll_form_ib"
+        android:id="@+id/ll_form_md"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="24dp">
+        android:orientation="vertical">
 
-        <!-- 3onwen el wajiha -->
-        <TextView
-            android:id="@+id/tv_titre_ib"
+        <!-- En-tête en dégradé -->
+        <LinearLayout
+            android:id="@+id/ll_header_md"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="DOUANE TEMPORELLE"
-            android:textSize="26sp"
-            android:textStyle="bold"
+            android:layout_height="190dp"
+            android:background="@drawable/md_bg_header"
             android:gravity="center"
-            android:layout_marginBottom="24dp" />
+            android:orientation="vertical"
+            android:paddingBottom="30dp">
 
-        <!-- 7a9l esm el msafer -->
-        <TextView
-            android:id="@+id/tv_label_nom_ib"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nom du voyageur" />
-
-        <EditText
-            android:id="@+id/et_nom_ib"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex : Marty McFly"
-            android:inputType="textPersonName" />
-
-        <!-- 7a9l 3am el wiladha: ar9am bark w 4 5anat ken -->
-        <TextView
-            android:id="@+id/tv_label_naissance_ib"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Année de naissance" />
-
-        <EditText
-            android:id="@+id/et_naissance_ib"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex : 1990"
-            android:inputType="number"
-            android:maxLength="4" />
-
-        <!-- 7a9l 3am el wejha: ar9am bark w 4 5anat ken -->
-        <TextView
-            android:id="@+id/tv_label_destination_ib"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Année de destination" />
-
-        <EditText
-            android:id="@+id/et_destination_ib"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Ex : 2050"
-            android:inputType="number"
-            android:maxLength="4" />
-
-        <!-- sabab el safar: tnejem tekhtar wa7da bark -->
-        <TextView
-            android:id="@+id/tv_label_motif_ib"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Motif du voyage" />
-
-        <RadioGroup
-            android:id="@+id/rg_motif_ib"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:id="@+id/rb_tourisme_ib"
+            <TextView
+                android:id="@+id/tv_titre_md"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Tourisme" />
+                android:letterSpacing="0.08"
+                android:text="@string/MD_titre"
+                android:textColor="@color/MD_white"
+                android:textSize="26sp"
+                android:textStyle="bold" />
 
-            <RadioButton
-                android:id="@+id/rb_modification_ib"
+            <TextView
+                android:id="@+id/tv_sous_titre_md"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Modification du passé" />
+                android:layout_marginTop="6dp"
+                android:alpha="0.9"
+                android:text="@string/MD_sous_titre"
+                android:textColor="@color/MD_white"
+                android:textSize="14sp" />
+        </LinearLayout>
 
-            <RadioButton
-                android:id="@+id/rb_fuite_ib"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fuite" />
-        </RadioGroup>
-
-        <!-- zerr el fa7s mta3 el profil -->
-        <Button
-            android:id="@+id/btn_inspecter_ib"
+        <!-- Carte du formulaire -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_form_md"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
-            android:text="Inspecter le profil" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-36dp"
+            android:layout_marginEnd="20dp"
+            app:cardBackgroundColor="@color/MD_white"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="6dp"
+            app:strokeWidth="0dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="22dp">
+
+                <!-- 7a9l esm el msafer -->
+                <TextView
+                    android:id="@+id/tv_label_nom_md"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:letterSpacing="0.04"
+                    android:text="@string/MD_label_nom"
+                    android:textColor="@color/MD_text_light"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_nom_md"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxStrokeColor="@color/MD_primary"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_nom_md"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/MD_hint_nom"
+                        android:inputType="textPersonName"
+                        android:textColor="@color/MD_text_dark" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 7a9l 3am el wiladha: ar9am bark w 4 5anat ken -->
+                <TextView
+                    android:id="@+id/tv_label_naissance_md"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:letterSpacing="0.04"
+                    android:text="@string/MD_label_naissance"
+                    android:textColor="@color/MD_text_light"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_naissance_md"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxStrokeColor="@color/MD_primary"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_naissance_md"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/MD_hint_naissance"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:textColor="@color/MD_text_dark" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- 7a9l 3am el wejha: ar9am bark w 4 5anat ken -->
+                <TextView
+                    android:id="@+id/tv_label_destination_md"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:letterSpacing="0.04"
+                    android:text="@string/MD_label_destination"
+                    android:textColor="@color/MD_text_light"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_destination_md"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:boxCornerRadiusBottomEnd="14dp"
+                    app:boxCornerRadiusBottomStart="14dp"
+                    app:boxCornerRadiusTopEnd="14dp"
+                    app:boxCornerRadiusTopStart="14dp"
+                    app:boxStrokeColor="@color/MD_primary"
+                    app:hintEnabled="false">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_destination_md"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/MD_hint_destination"
+                        android:inputType="number"
+                        android:maxLength="4"
+                        android:textColor="@color/MD_text_dark" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- sabab el safar: tnejem tekhtar wa7da bark -->
+                <TextView
+                    android:id="@+id/tv_label_motif_md"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:letterSpacing="0.04"
+                    android:text="@string/MD_label_motif"
+                    android:textColor="@color/MD_text_light"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/rg_motif_md"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp">
+
+                    <RadioButton
+                        android:id="@+id/rb_tourisme_md"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/MD_primary"
+                        android:text="@string/MD_motif_tourisme"
+                        android:textColor="@color/MD_text_dark"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_modification_md"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/MD_primary"
+                        android:text="@string/MD_motif_modification"
+                        android:textColor="@color/MD_text_dark"
+                        android:textSize="15sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_fuite_md"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@color/MD_primary"
+                        android:text="@string/MD_motif_fuite"
+                        android:textColor="@color/MD_text_dark"
+                        android:textSize="15sp" />
+                </RadioGroup>
+
+                <!-- zerr el fa7s mta3 el profil -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_inspecter_md"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_marginTop="22dp"
+                    android:letterSpacing="0.03"
+                    android:text="@string/MD_btn_inspecter"
+                    android:textAllCaps="false"
+                    android:textColor="@color/MD_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:backgroundTint="@color/MD_primary"
+                    app:cornerRadius="16dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Signature -->
+        <TextView
+            android:id="@+id/tv_signature_md"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="24dp"
+            android:gravity="center"
+            android:text="@string/MD_signature"
+            android:textColor="@color/MD_text_light"
+            android:textSize="12sp" />
     </LinearLayout>
 </ScrollView>

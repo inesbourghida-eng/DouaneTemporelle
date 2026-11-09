@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- hethi el alwen elli nest3mlou fel app -->
 <resources>
+    <!-- Couleurs par défaut du projet (utilisées par le thème) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <!-- loun el 5alfiya mta3 el passeport: krem -->
-    <color name="creme_passeport">#FFF5E6C8</color>
-    <!-- loun dakhel el cadre -->
-    <color name="creme_clair">#FFFFF8E7</color>
-    <!-- loun el ktiba w el hodoud: bonni gham9a -->
-    <color name="brun_passeport">#FF4E342E</color>
-    <!-- loun el mwafa9a: a5dhar -->
-    <color name="vert_approuve">#FF2E7D32</color>
-    <!-- loun el rafdh: a7mar -->
-    <color name="rouge_refuse">#FFC62828</color>
+
+    <!-- Palette MD : pastel élégant -->
+    <color name="MD_primary">#8E8CD8</color>       <!-- lavande poudrée -->
+    <color name="MD_primary_dark">#6C6AB8</color>  <!-- lavande profonde -->
+    <color name="MD_accent">#C97B84</color>        <!-- vieux rose -->
+    <color name="MD_background">#F7F4FB</color>    <!-- blanc lavande -->
+    <color name="MD_text_dark">#3D3A4F</color>     <!-- prune ardoise -->
+    <color name="MD_text_light">#8A8699</color>    <!-- gris mauve -->
+    <color name="MD_white">#FFFFFF</color>
 </resources>

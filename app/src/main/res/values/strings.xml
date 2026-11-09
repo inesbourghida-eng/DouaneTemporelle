@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">DouaneTemporelle</string>
-</resources>
+
+    <!-- Ecran 1 : formulaire du voyageur (MD) -->
+    <string name="MD_titre">DOUANE TEMPORELLE</string>
+    <string name="MD_sous_titre">Contrôle des voyageurs du temps</string>
+    <string name="MD_label_nom">Nom du voyageur</string>
+    <string name="MD_hint_nom">Ex : Marty McFly</string>
+    <string name="MD_label_naissance">Année de naissance</string>
+    <string name="MD_hint_naissance">Ex : 1990</string>
+    <string name="MD_label_destination">Année de destination</string>
+    <string name="MD_hint_destination">Ex : 2050</string>
+    <string name="MD_label_motif">Motif du voyage</string>
+    <string name="MD_motif_tourisme">Tourisme</string>
+    <string name="MD_motif_modification">Modification du passé</string>
+    <string name="MD_motif_fuite">Fuite</string>
+    <string name="MD_btn_inspecter">Inspecter le profil</string>
+    <string name="MD_signature">Réalisé par MD</string>
+</resources>git add app/src/main/res/values/strings.xml

@@ -25,11 +25,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // nrabtou kol variable bel element mta3ha fel XML 3an tari9 el id
-        etNom = findViewById(R.id.et_nom_ib);
-        etNaissance = findViewById(R.id.et_naissance_ib);
-        etDestination = findViewById(R.id.et_destination_ib);
-        rgMotif = findViewById(R.id.rg_motif_ib);
-        btnInspecter = findViewById(R.id.btn_inspecter_ib);
+        etNom = findViewById(R.id.et_nom_md
+);
+        etNaissance = findViewById(R.id.et_naissance_md
+);
+        etDestination = findViewById(R.id.et_destination_md
+);
+        rgMotif = findViewById(R.id.rg_motif_md
+);
+        btnInspecter = findViewById(R.id.btn_inspecter_md
+);
 
         // ki el user yenzel 3al zerr, n3ayto lel methode inspecterProfil
         btnInspecter.setOnClickListener(v -> inspecterProfil());
