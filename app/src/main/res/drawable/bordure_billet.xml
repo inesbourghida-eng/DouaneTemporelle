@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- cadre m9attta3 b 7awef mdawra, yet3ata chakl billet -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/creme_clair" />
+    <stroke
+        android:width="3dp"
+        android:color="@color/brun_passeport"
+        android:dashWidth="10dp"
+        android:dashGap="5dp" />
+    <corners android:radius="12dp" />
+</shape>
