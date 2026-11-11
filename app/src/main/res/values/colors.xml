@@ -22,4 +22,15 @@
     <color name="MD_text_dark">#3D3A4F</color>     <!-- prune ardoise -->
     <color name="MD_text_light">#8A8699</color>    <!-- gris mauve -->
     <color name="MD_white">#FFFFFF</color>
+    <color name="pastel_rose">#F8C8DC</color>
+    <color name="pastel_rose_fonce">#E89BBE</color>
+    <color name="pastel_jaune">#FFF1B5</color>
+    <color name="pastel_jaune_fonce">#F5D76E</color>
+    <color name="pastel_lavande">#E3D7F5</color>
+    <color name="pastel_lavande_fonce">#B9A4E0</color>
+    <color name="creme_carte">#FFFCF7</color>
+    <color name="texte_prune">#4A3651</color>
+    <color name="texte_doux">#8A7590</color>
+    <color name="blanc">#FFFFFF</color>
+    <color name="texte_alerte">#B0476F</color>
 </resources>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Colonne de gauche (icône) : dégradé vertical lavande -> rose -> jaune, coins arrondis -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient
+        android:angle="270"
+        android:startColor="@color/pastel_lavande"
+        android:centerColor="@color/pastel_rose"
+        android:endColor="@color/pastel_jaune" />
+    <corners android:radius="28dp" />
+    <stroke android:width="2dp" android:color="@color/blanc" />
+</shape>

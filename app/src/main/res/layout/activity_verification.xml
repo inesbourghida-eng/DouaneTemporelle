@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- el wajiha ethnya: el passeport ezzmeni -->
+<!-- el wajiha ethnya: el passeport ezzmeni (design pastel rose / jaune / lavande) -->
 <!-- el jedhr: LinearLayout ofo9i, 3al isar sora b wazn 0.3 w 3al limin RelativeLayout b wazn 0.7 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/ll_racine_ib"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    android:background="@color/creme_passeport"
-    android:fitsSystemWindows="true">
+    android:background="@drawable/bg_pastel_gradient"
+    android:fitsSystemWindows="true"
+    android:padding="10dp">
 
     <!-- el sora 3al isar: el 3ard 0dp m3a wazn 0.3 -->
+    <!-- fond lavande/rose arrondi bech twalli kif "colonne" elegante -->
     <ImageView
         android:id="@+id/iv_passeport_ib"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.3"
-        android:padding="12dp"
+        android:layout_marginEnd="10dp"
+        android:padding="18dp"
+        android:background="@drawable/bg_colonne_icone"
+        android:elevation="3dp"
         android:scaleType="fitCenter"
         android:contentDescription="Icône du passeport temporel"
-        android:src="@drawable/ic_passeport" />
+        android:src="@drawable/ic_passeport"
+        app:tint="@color/texte_prune" />
 
     <!-- el ktiba 3al limin: el 3ard 0dp m3a wazn 0.7 -->
     <RelativeLayout
@@ -26,30 +33,44 @@
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="0.7"
-        android:layout_margin="8dp"
-        android:padding="12dp"
-        android:background="@drawable/bordure_billet">
+        android:padding="22dp"
+        android:background="@drawable/bg_passport_card"
+        android:elevation="4dp">
 
         <!-- 3onwen el passeport -->
         <TextView
             android:id="@+id/tv_titre_passeport_ib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
             android:gravity="center"
+            android:letterSpacing="0.12"
             android:text="PASSEPORT TEMPOREL"
-            android:textColor="@color/brun_passeport"
+            android:textColor="@color/texte_prune"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:fontFamily="monospace" />
+            android:fontFamily="serif" />
+
+        <!-- khatt zina ta7t el 3onwen -->
+        <View
+            android:id="@+id/v_separateur_ib"
+            android:layout_width="60dp"
+            android:layout_height="3dp"
+            android:layout_below="@id/tv_titre_passeport_ib"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_age_highlight" />
 
         <!-- esm el msafer -->
         <TextView
             android:id="@+id/tv_nom_ib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_titre_passeport_ib"
-            android:layout_marginTop="16dp"
-            android:textColor="@color/brun_passeport"
+            android:layout_below="@id/v_separateur_ib"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_info_row"
+            android:padding="12dp"
+            android:textColor="@color/texte_prune"
             android:textSize="14sp"
             android:fontFamily="monospace" />
 
@@ -60,7 +81,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_nom_ib"
             android:layout_marginTop="8dp"
-            android:textColor="@color/brun_passeport"
+            android:background="@drawable/bg_info_row"
+            android:padding="12dp"
+            android:textColor="@color/texte_prune"
             android:textSize="14sp"
             android:fontFamily="monospace" />
 
@@ -71,19 +94,24 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_naissance_ib"
             android:layout_marginTop="8dp"
-            android:textColor="@color/brun_passeport"
+            android:background="@drawable/bg_info_row"
+            android:padding="12dp"
+            android:textColor="@color/texte_prune"
             android:textSize="14sp"
             android:fontFamily="monospace" />
 
-        <!-- el 3omr ezzmeni = 3am el wejha - 3am el wiladha -->
+        <!-- el 3omr ezzmeni = 3am el wejha - 3am el wiladha (mis en valeur jaune/rose) -->
         <TextView
             android:id="@+id/tv_age_ib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_destination_ib"
             android:layout_marginTop="8dp"
-            android:textColor="@color/brun_passeport"
-            android:textSize="14sp"
+            android:background="@drawable/bg_age_highlight"
+            android:gravity="center"
+            android:padding="14dp"
+            android:textColor="@color/texte_prune"
+            android:textSize="15sp"
             android:textStyle="bold"
             android:fontFamily="monospace" />
 
@@ -94,43 +122,62 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_age_ib"
             android:layout_marginTop="8dp"
-            android:textColor="@color/brun_passeport"
+            android:background="@drawable/bg_info_row"
+            android:padding="12dp"
+            android:textColor="@color/texte_prune"
             android:textSize="14sp"
             android:fontFamily="monospace" />
 
         <!-- tanbih el paradoxe: mkhabbi ml loul w yodhher ken lazem -->
-        <!-- layout_above: dima fou9 zerr el mwafa9a bech ma yet5abbach ta7t el zrar -->
+        <!-- wrap_content + pas de layout_above: bech ma yetmadech 3al espace lkol -->
         <TextView
             android:id="@+id/tv_alerte_ib"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/tv_motif_ib"
-            android:layout_above="@+id/btn_approuver_ib"
-            android:layout_marginTop="12dp"
-            android:text="PARADOXE DÉTECTÉ : saut non autorisé"
-            android:textColor="@color/rouge_refuse"
+            android:layout_marginTop="14dp"
+            android:background="@drawable/bg_alerte"
+            android:gravity="center"
+            android:padding="12dp"
+            android:text="⚠ PARADOXE DÉTECTÉ : saut non autorisé"
+            android:textColor="@color/texte_alerte"
             android:textSize="13sp"
             android:textStyle="bold"
             android:visibility="gone" />
 
         <!-- zerr el rafdh fel ta7t (n3arrfouh louwel bech el zerr el akher yet3alla9 bih) -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_refuser_ib"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:layout_alignParentBottom="true"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="serif"
             android:text="Refuser (Risque de paradoxe)"
-            android:textSize="12sp" />
+            android:textAllCaps="false"
+            android:textColor="@color/texte_prune"
+            android:textSize="13sp"
+            app:backgroundTint="@color/creme_carte"
+            app:cornerRadius="27dp"
+            app:strokeColor="@color/pastel_rose_fonce"
+            app:strokeWidth="2dp" />
 
         <!-- zerr el mwafa9a fou9 zerr el rafdh -->
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_approuver_ib"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="54dp"
             android:layout_above="@id/btn_refuser_ib"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
+            android:fontFamily="serif"
             android:text="Approuver le saut temporel"
-            android:textSize="12sp" />
+            android:textAllCaps="false"
+            android:textColor="@color/texte_prune"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/tint_btn_approuver"
+            app:cornerRadius="27dp" />
 
     </RelativeLayout>
 </LinearLayout>
